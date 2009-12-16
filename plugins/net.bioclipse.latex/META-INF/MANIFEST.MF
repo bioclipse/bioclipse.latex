@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Bioclipse LaTeX
+Bundle-SymbolicName: net.bioclipse.latex; singleton:=true
+Bundle-Version: 2.2.0.RC2
+Bundle-Activator: net.bioclipse.latex.Activator
+Export-Package: net.bioclipse.latex, net.bioclipse.latex.business
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ net.bioclipse.core,
+ net.bioclipse.scripting,
+ org.springframework.bundle.spring.aop,
+ net.sf.cglib,
+ org.springframework.osgi.aopalliance.osgi
+Import-Package: org.apache.log4j
+Bundle-ActivationPolicy: lazy
