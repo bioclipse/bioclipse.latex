@@ -35,10 +35,31 @@ public class LatexManager implements IBioclipseManager {
         StringBuilder latex = new StringBuilder();
         int rowCount = matrix.getRowCount();
         int colCount = matrix.getColumnCount();
+        boolean hasRowLabels = matrix.hasRowHeader();
+        boolean hasColLabels = matrix.hasColHeader();
         latex.append("\\begin{tabular}{");
+        if (hasRowLabels) latex.append("l|");
         for (int col=0; col<colCount; col++) latex.append('c');
         latex.append("}\n");
+        
+        // optionally, create the header line
+        if (hasColLabels) {
+            if (hasRowLabels) latex.append(" & ");
+            for (int col=0; col<colCount; col++) {
+                latex.append(matrix.getColumnName(col+1));
+                if (col+1 < colCount)
+                    // there will be another column
+                    latex.append(" & ");
+            }
+            latex.append(" \\\\\n\\hline\n");
+        }
+        
+        // create the matrix content
         for (int row=0; row<rowCount; row++) {
+            if (hasRowLabels) {
+                latex.append(matrix.getRowName(row+1));
+                latex.append(" & ");
+            }
             for (int col=0; col<colCount; col++) {
                 latex.append(matrix.get(row+1,col+1));
                 if (col+1 < colCount)
