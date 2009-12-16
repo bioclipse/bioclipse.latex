@@ -11,11 +11,25 @@
 package net.bioclipse.latex.business;
 
 import net.bioclipse.core.PublishedClass;
+import net.bioclipse.core.PublishedMethod;
+import net.bioclipse.core.Recorded;
 import net.bioclipse.managers.business.IBioclipseManager;
+import net.bioclipse.statistics.model.IMatrixResource;
 
 @PublishedClass(
-    value="TODO: Describe the manager here."
+    value="Manager that provides some convenience methods to create " +
+    		"LaTeX."
 )
 public interface ILatexManager extends IBioclipseManager {
 
+    @Recorded
+    @PublishedMethod(methodSummary=
+        "Converts an matrix resource into a LaTeX source file.",
+        params="IMatrixResource matrix,String filename"
+    )
+    public String writeMatrix(
+        IMatrixResource matrix,
+        String filename
+    );
+    
 }
