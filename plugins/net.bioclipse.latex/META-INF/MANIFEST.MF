@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Bioclipse LaTeX
 Bundle-SymbolicName: net.bioclipse.latex; singleton:=true
-Bundle-Version: 2.2.0.RC2
+Bundle-Version: 2.5.0.qualifier
 Bundle-Activator: net.bioclipse.latex.Activator
 Export-Package: net.bioclipse.latex, net.bioclipse.latex.business
 Require-Bundle: org.eclipse.ui,
