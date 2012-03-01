@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="net.bioclipse.bridgedb_site"
+      id="net.bioclipse.latex_site"
       label="Bioclipse-LaTeX Update Site"
       version="2.5.0.qualifier">
 
